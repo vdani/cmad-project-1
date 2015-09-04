@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.cisco.myapp.Response" table="responsedb" schema="vdb" batch-size="3">
+		<id name="rid" type="int">
+			<column name="r_id" />
+			<generator class="native" />
+		</id>
+		<property name="uid" type="int">
+			<column name="u_id" />
+		</property>
+		<property name="qid" type="int">
+			<column name="q_id" />
+		</property>
+		<property name="response" type="string">
+			<column name="response" length="4000" />
+		</property>
+
+	</class>
+</hibernate-mapping>

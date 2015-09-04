@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.cisco.myapp.User" table="userdb" schema="vdb" batch-size="3">
+		<id name="id" type="int">
+			<column name="u_id" />
+			<generator class="native" />
+		</id>
+		<property name="emailId" type="string">
+			<column name="email" length="100" />
+		</property>
+		<property name="password" type="string">
+			<column name="passwd" length="100" />
+		</property>
+	</class>
+	<!--  <class name="com.cisco.myapp.Question" table="questiondb"
+		batch-size="3">
+		<id name="qid" type="int">
+			<column name="q_id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="id" class="com.cisco.myapp.User"
+			column="u_id" unique="true" not-null="true" cascade="all" />
+		<property name="question" type="string">
+			<column name="question" length="4000" />
+		</property>
+
+	</class>
+	<class name="com.cisco.myapp.Response" table="responsedb"
+		batch-size="3">
+		<id name="rId" type="int">
+			<column name="r_id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="id" class="com.cisco.myapp.User"
+			column="u_id" unique="true" not-null="true" cascade="all" />
+		<many-to-one name="qid" class="com.cisco.myapp.Question"
+			column="q_id" unique="true" not-null="true" cascade="all" />
+		<property name="response" type="string">
+			<column name="response" length="4000" />
+		</property>
+
+	</class> --> 
+</hibernate-mapping>

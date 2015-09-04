@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.cisco.myapp.Question" table="questiondb" schema="vdb" batch-size="3">
+		<id name="qid" type="int">
+			<column name="q_id" />
+			<generator class="native" />
+		</id>
+		<!--  <many-to-one name="uid" class="com.cisco.myapp.User"
+			column="u_id" unique="true" not-null="true" cascade="all" /> -->
+		<property name="uid" type="int">
+			<column name="u_id" />
+		</property>	
+		<property name="question" type="string">
+			<column name="question" length="4000" />
+		</property>
+
+	</class>
+</hibernate-mapping>
